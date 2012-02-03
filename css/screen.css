@@ -1,0 +1,236 @@
+/*
+Theme Name: Tim Bena's Graphic Design Portfolio
+Theme URI: www.timbena.com
+Description: WP theme for the portfolio of Tim Bena. 
+Author: Tim Bena
+Version: 1.0
+Tags: print design, web design, graphic design, artist
+*/
+
+/* Reset Styles */ 
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote, div {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+}
+/* End Reset Styles */ 
+
+body {
+	background-color: black;
+	min-width: 960px;
+	font-family: depot-new, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;
+	border-left: 10px solid gray;
+}
+
+a {
+	color: gray;
+}
+
+#bgartwork {
+	width: 100%;
+	height: 0;
+	overflow: visible;
+	z-index: 0;
+	position: fixed;
+}
+
+#bgartwork img {
+	width: 100%;
+	height: auto;
+}
+
+#wrapper {
+	width: 650px;
+	padding-left: 10px;
+	padding-right: 300px;
+	margin: 0 auto;
+	z-index: 2;
+	position: relative;
+}
+
+#logoabout {
+	width: 400px;
+	height: 120px;
+	background-color: silver;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	position: relative;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-bottom: 1px solid rgba(0,0,0,.6);
+}
+
+#logo {
+	background-image: url(../images/logo.png);
+	text-indent: -8888px;
+	display: block;
+	margin-top: 5px;
+	margin-right: 20px;
+	position: absolute;
+	top: 0;
+	left: 25px;
+	height: 120px;
+	overflow: hidden;
+	background-color: gray;
+	width: 120px;
+}
+
+#logo:hover {
+	background-image: url(../images/logo_hover.png);
+}
+
+#about {
+	padding: 5px 15px 10px 15px;
+	width: 200px;
+	margin-right: 10px;
+	margin-top: 10px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#about p {
+	font-size: 15px;
+	line-height: 18px;
+	color: #222;
+	-webkit-font-smoothing: antialiased;
+}
+
+blockquote {
+	width: 150px;
+	float: right;
+	margin: 20px 100px 20px 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	background-color: gray;
+	padding: 10px;
+	font-size: 20px;
+	font-family: depot-new-condensed, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif; 
+	-webkit-font-smoothing: antialiased;
+}
+
+#sidebar {
+	width: 960px;
+	z-index: 1;
+	height: 0;
+	overflow: visible;
+	top: 0;
+	left: 50%;
+	margin-left: -480px;
+	position: absolute;
+}
+
+#sidebar .block {
+}
+
+#contact {
+	width: 275px;
+	height: 40px;
+	background-color: #816B85;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	float: right;
+	clear: both;
+}
+
+#contact a {
+	width: 200px;
+	height: 61px;
+	margin-left: 40px;
+	margin-top: 5px;
+	background-color: gray;
+	background-image: url(../images/contact.png);
+	background-repeat: no-repeat;
+	text-indent: -8888px;
+	overflow: hidden;
+	display: block;
+}
+
+#contact a:hover {
+	background-image: url(../images/contact_hover.png);
+}
+
+#contact p {
+	font-size: 18px;
+	line-height: 20px;
+	color: #222;
+	float: right;
+	-webkit-font-smoothing: antialiased;
+}
+
+#portfolio {
+	width: 275px;
+	height: 400px;
+	background-color: silver;
+	float: right;
+	clear: both;
+}
+
+#footer {
+	background-color: gray;
+	width: 275px;
+	float: right;
+	clear: both;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-bottom: 1px solid rgba(0,0,0,.6);
+}
+
+#maincont {
+	background-color: rgba(20,20,20,.9);
+	color: white;
+	padding-top: 25px;
+	padding-bottom: 40px;
+	border-top: 1px solid rgba(255,255,255,.35);
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+}
+
+#maincont p {
+	margin: 0;
+	padding: 0;
+}
+
+#maincont .entrycontent p {
+	margin: 0 120px 20px 20px;
+	color: silver;
+	-webkit-font-smoothing: antialiased;
+}
+
+.blogentry .dateline {
+	font-size: 11px;
+	color: gray;
+	margin: 0 20px 0 20px;
+	-webkit-font-smoothing: antialiased;
+}
+
+h2 {
+	font-size: 30px;
+	font-family: depot-new-condensed, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;
+	margin: 0 20px 14px 20px;
+
+a.cont {
+	width: 123px;
+	height: 46px;
+	background-image: url(../images/contact.jpg);
+	background-repeat: no-repeat;
+	display: block;
+}
+
+a.cont:hover {
+	width: 123px;
+	height: 46px;
+	background-image: url(../images/contact2.jpg);
+	background-repeat: no-repeat;
+	display: block;
+}
+
+#logo img {
+}
