@@ -3,6 +3,12 @@ $(document).ready(function(){
 
 // Code goes here, yo!
 
+$(document).ready(function() {
+
+	$("#lightbox a").lightBox();
+
+	});
+
 var enableFunStuff = function() {
 	$('#sidebar').css({
 		position: 'fixed',
