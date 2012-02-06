@@ -1,7 +1,13 @@
 ;(function($){
 $(document).ready(function(){
 
-$("#lightbox a").lightBox();
+// Code goes here, yo!
+
+$(document).ready(function() {
+
+	$("#lightbox a").lightBox();
+
+	});
 
 var enableFunStuff = function() {
 	$('#sidebar').css({
