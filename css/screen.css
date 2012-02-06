@@ -161,6 +161,21 @@ blockquote {
 	-webkit-font-smoothing: antialiased;
 }
 
+#lightbox {
+	width: 275px; margin: 1px auto;
+}
+
+#lightbox li {
+	list-style: none; float: left; margin: 5px;
+}
+
+#lightbox a img {
+	border: 3px solid #666;
+}
+#lightbox a:hover img {
+	border: 3px solid #000;
+}
+
 #portfolio {
 	width: 275px;
 	height: 400px;
