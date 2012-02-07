@@ -129,7 +129,7 @@ blockquote {
 #contact {
 	width: 275px;
 	height: 40px;
-	background-color: #816B85;
+	background-color: #000;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	float: right;
@@ -156,8 +156,9 @@ blockquote {
 #contact p {
 	font-size: 18px;
 	line-height: 20px;
-	color: #222;
+	color: white;
 	float: right;
+	margin-right: 10px;
 	-webkit-font-smoothing: antialiased;
 }
 
