@@ -166,7 +166,7 @@ blockquote {
 }
 
 #lightbox li {
-	list-style: none; float: left; margin-left: 10px;
+	list-style: none; float: left; margin-left: 10px; margin-bottom: 5px;
 }
 
 #lightbox a img {
