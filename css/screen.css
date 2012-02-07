@@ -162,18 +162,18 @@ blockquote {
 }
 
 #lightbox {
-	width: 275px; margin: 1px auto;
+	width: 275px; margin: 5px auto;
 }
 
 #lightbox li {
-	list-style: none; float: left; margin: 5px;
+	list-style: none; float: left; margin-left: 10px;
 }
 
 #lightbox a img {
-	border: 3px solid #666;
+	border: 3px solid #000;
 }
 #lightbox a:hover img {
-	border: 3px solid #000;
+	border: 3px solid #FFF;
 }
 
 #portfolio {
@@ -185,7 +185,7 @@ blockquote {
 }
 
 #portfolio h2 {
-	margin: 5px;
+	margin: 15px;
 	font-size: 22px;
 }
 
