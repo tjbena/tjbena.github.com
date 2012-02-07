@@ -128,29 +128,21 @@ blockquote {
 
 #contact {
 	width: 275px;
-	height: 40px;
+	height: 35px;
 	background-color: #000;
-	padding-top: 15px;
+	padding-top: 5px;
 	padding-bottom: 15px;
 	float: right;
 	clear: both;
 }
 
 #contact a {
-	width: 200px;
-	height: 61px;
-	margin-left: 40px;
-	margin-top: 5px;
-	background-color: gray;
-	background-image: url(../images/contact.png);
-	background-repeat: no-repeat;
-	text-indent: -8888px;
-	overflow: hidden;
-	display: block;
+	color: white;
+	text-decoration: none;
 }
 
 #contact a:hover {
-	background-image: url(../images/contact_hover.png);
+	color: #816b85;
 }
 
 #contact p {
@@ -159,6 +151,7 @@ blockquote {
 	color: white;
 	float: right;
 	margin-right: 10px;
+	font-family: depot-new-condensed, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif; 
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -179,14 +172,14 @@ blockquote {
 
 #portfolio {
 	width: 275px;
-	height: 350px;
+	height: 325px;
 	background-color: silver;
 	float: right;
 	clear: both;
 }
 
 #portfolio h2 {
-	margin: 15px;
+	margin: 10px;
 	font-size: 22px;
 }
 
