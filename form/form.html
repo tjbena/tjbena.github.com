@@ -1,0 +1,194 @@
+<?php
+if (isset($_POST['submit'])) {
+// This variable is to choose which type of processing you're using. 
+$mode = "csv"; // or "csv" or "email"
+// These set your initial variables.
+$q1_name = $_POST['q1_name'];
+$q2_email = $_POST['q2_email'];
+$q3_comments = $_POST['q3_comments'];
+   // it's good planning to set your variables explicitly before setting them programatically.
+   if (isset($q1_name)) {
+   $q1_name = trim($q1_name);
+   $q1_name = strip_tags($q1_name);
+   }
+   if (isset($q2_email)) {
+   $q2_email = trim($q2_email);
+   $q2_email = strip_tags($q2_email);
+   }
+   if (isset($q3_comments)) {
+   $q3_comments = trim($q3_comments);
+   $q3_comments = strip_tags($q3_comments);
+   }
+   if (isset($q1_name) && isset($q2_email) && isset($q3_comments) && $error == FALSE) {
+   $process = TRUE;
+   } else {
+   $process = FALSE;
+   }
+  // changed up to here so far
+
+  
+   if($mode == "mysql") {
+   // in order to play with this section, you will need to create your database and edit these fields to your own information
+   define ('DB_USER', 'username');
+   define ('DB_PASSWORD', 'password');
+   define ('DB_HOST', 'localhost');
+   define ('DB_NAME', 'your_db');
+   $dbc = @mysql_connect (DB_HOST, DB_USER, DB_PASSWORD) or die('Failure: ' . mysql_error() );
+   mysql_select_db(DB_NAME) or die ('Could not select database: ' . mysql_error() );
+   
+   $query = "INSERT INTO survey VALUES ('','$q1_name','$q2_email','$q3_comments',NOW())";
+   $q = mysql_query($query);
+   
+    if (!$q) {
+    exit("<p>MySQL Insertion failure.</p>");
+    } else {
+    mysql_close();
+    //for testing only
+    //echo "<p>MySQL Insertion Successful</p>";
+    }
+   }
+
+   if ($mode == "csv") {
+   $csv_file = 'contact.csv';
+    if (is_writable($csv_file)) {
+        if (!$csv_handle = fopen($csv_file,'a')) {
+        // this line is for troubleshooting
+        // echo "<p>Cannot open file $csv_file</p>";
+        exit;
+        }
+    }
+   $csv_item = "\"$q1_name\",\"$q2_email\",\"$q3_comments\"\n";
+    if (is_writable($csv_file)) {
+        if (fwrite($csv_handle, $csv_item) === FALSE) {
+        //for testing
+        //echo "Cannot write to file";
+        exit; } 
+    }
+   fclose($csv_handle);
+   }
+// changed below
+   if ($mode == "email") {
+   //first, define your four mail function fields
+   $recipient = "tim@timbena.com";
+   $subject = "Online message from timbena.com";
+   $content = "Online contact message:\n
+   What is your name? $q1_name\n
+   What is your email? $q2_email\n
+   Your Comments:\n
+   $q3_comments\n";
+   
+   $header = "From: YourContactForm <tim@timbena.com>\n"."Reply-To: tim@timbena.com\n";
+   //now send it off
+   mail($recipient, $subject, $content, $header);
+   }
+
+}
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Contact Form</title>
+<!--[if lte IE 6]>
+<link href="ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<style type="text/css">
+
+/* Reset Styles */ 
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote, div {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+}
+/* End Reset Styles */ 
+
+#main {
+	width: 440px;
+	border: 3px solid #816b85;
+	padding: 15px 0px;
+	background-color: silver;
+}
+
+#main h1 {
+	color: #000;
+	font-family: depot-new-condensed, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif; 
+	-webkit-font-smoothing: antialiased;
+	float: right;
+	padding-right: 55px;
+	font-size: 2.1em;
+	font-weight: bold;
+	display: block;
+	margin-top: 15px;
+}
+
+#main img {
+	float: right;
+	padding: 5px 49px 10px 0px;
+}
+
+#subForm {
+	font-size: 1.1em;
+	display: block;
+}
+#subForm .label {
+	float: left;
+	width: 100px;
+	text-align: right;
+	font-weight: bold;
+	margin: 10px 10px 0px 0px;
+	display: block;
+}
+
+#send {
+	margin-left: 109px;
+	margin-top: 10px;
+	background-color: #000;
+	color: #FFF;
+	font-family: depot-new-condensed, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif; 
+	-webkit-font-smoothing: antialiased;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#name, #email, #comments {
+	background-color: #816b85;
+	font-family: depot-new-condensed, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif; 
+	-webkit-font-smoothing: antialiased;
+	font-size: .9em;
+	width: 270px;
+	margin-top: 10px;
+}
+
+#name:focus,
+#email:focus,
+#comments:focus,
+#refer:focus
+{
+	background-color: gray;
+}
+
+</style>
+</head>
+<body>
+
+  <div id="main">
+    <h1>contact me</h1><img src="images/purplogo.png" />
+    <div><form id="subForm" name="subForm" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+    <p><label for="q1" class="label">name:</label>
+      <input type="text" name="q1_name" id="q1" /></p>
+	  <p><label for="q2" class="label">email:</label>
+      <input type="text" name="q2_email" id="q2" /></p>
+	  <p>
+	    <label for="q3" class="label">what is &uarr;</label>
+        <textarea id="q3" name="q3_comments" cols="20" rows="4"></textarea>
+	  </p>
+	  <p>
+	    <input type="submit" name="Submit" id="send" value="send" />
+	  </p>
+    </form>
+    </div>
+  </div>
+
+  <!-- end main -->
+  
