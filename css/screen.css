@@ -244,6 +244,10 @@ h3 a {
 	font-size: 25px;
 }
 
+h3 a:hover {
+	color: silver;
+}
+
 ul {
 list-style-type: none;
 }
