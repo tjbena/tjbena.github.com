@@ -1,7 +1,7 @@
 /*
 Theme Name: Tim Bena's Graphic Design Portfolio
 Theme URI: www.timbena.com
-Description: WP theme for the portfolio of Tim Bena. 
+Description: Theme for the portfolio of Tim Bena. 
 Author: Tim Bena
 Version: 1.0
 Tags: print design, web design, graphic design, artist
@@ -15,6 +15,16 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable,
  font-weight: normal;
 }
 /* End Reset Styles */ 
+
+p.abstract {
+	color: silver;
+	font-family: depot-new, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-size: 15px;
+	line-height: 19px;
+	border-bottom: 2px solid silver;
+	padding-bottom: 10px;
+}
 
 body {
 	background-color: black;
@@ -123,9 +133,6 @@ blockquote {
 	position: absolute;
 }
 
-#sidebar .block {
-}
-
 #contact {
 	width: 275px;
 	height: 35px;
@@ -133,7 +140,6 @@ blockquote {
 	padding-top: 5px;
 	padding-bottom: 15px;
 	float: right;
-	clear: both;
 }
 
 #contact a {
@@ -232,23 +238,12 @@ h2 {
 	margin: 0 20px 14px 20px;
 }
 
-a.cont {
-	width: 123px;
-	height: 46px;
-	background-image: url(../images/contact.jpg);
-	background-repeat: no-repeat;
-	display: block;
-}
-
-a.cont:hover {
-	width: 123px;
-	height: 46px;
-	background-image: url(../images/contact2.jpg);
-	background-repeat: no-repeat;
-	display: block;
-}
-
-#logo img {
+h3 a {
+	text-decoration: none;
+	padding-left: 15px;
+	font-family: depot-new-condensed, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-size: 25px;
 }
 
 /**
