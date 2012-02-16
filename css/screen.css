@@ -16,21 +16,19 @@ html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable,
 }
 /* End Reset Styles */ 
 
+body {
+	background-color: black;
+	min-width: 960px;
+	font-family: depot-new, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;
+	border-left: 10px solid gray;
+}
+
 p.abstract {
 	color: silver;
 	font-family: depot-new, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-size: 15px;
 	line-height: 19px;
-	border-bottom: 2px solid silver;
-	padding-bottom: 10px;
-}
-
-body {
-	background-color: black;
-	min-width: 960px;
-	font-family: depot-new, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;
-	border-left: 10px solid gray;
 }
 
 a {
@@ -244,6 +242,10 @@ h3 a {
 	font-family: depot-new-condensed, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-size: 25px;
+}
+
+ul {
+list-style-type: none;
 }
 
 /**
