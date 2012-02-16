@@ -82,7 +82,6 @@ a {
 	left: 25px;
 	height: 120px;
 	overflow: hidden;
-	background-color: gray;
 	width: 120px;
 }
 
@@ -238,7 +237,7 @@ h2 {
 
 h3 a {
 	text-decoration: none;
-	padding-left: 15px;
+	padding-left: 20px;
 	font-family: depot-new-condensed, "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	font-size: 25px;
